@@ -19,16 +19,21 @@ for (let contador = 0; contador < listaDeTeclas.length; contador++) {
         playSonido(inAudio);
     };
     tecla.onkeydown = function (evento){
+        
+        
         console.log(evento.code === 'Space');
         
-
-        if('espacio'){
+        if(evento.code === 'Space'){
             tecla.classList.add('activa');
         }
         
     }
-    tecla.onkeyup = function (){
-        tecla.classList.remove('activa');
+    tecla.onkeyup = function (evento){
+        console.log(evento);
+        if(evento.keyCode === 32){
+            tecla.classList.remove('activa');
+        }
+        
     }
     
 }
